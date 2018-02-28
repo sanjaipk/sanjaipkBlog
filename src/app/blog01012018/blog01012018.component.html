@@ -1,0 +1,53 @@
+<div class="card-content teal lighten-1 " style="text-align: center; padding:10px ">
+    <span class="card-title   white-text"> Layered Architecture</span>
+</div>
+
+
+
+<div class="card-action">
+     <div class="blogheading">Introduction:</div> 
+    <p>Layered application is software architectural approach. In this article provides details on Layered application approach with examples.
+   </p> 
+    <div class="blogheading">High-level process flow:</div> 
+<p>
+    Process flow is a representation of path that will be taken by user input until it reaches data store.
+   </p> 
+    <div class="blogheading">Generic layering template:</div> 
+    <p>It is advised to start with generic layering structure and evolve to accept process flow.
+    <br> Generic layering involves separation of screens from logic and logic from data storage. </p>
+
+    It consists of following 3 layers: 
+    
+     <ul class = "collection">
+      <li  class = "collection-item"><i>UI Layer</i> : <br/>contains all screens and logic required to render a web page.</li>
+      <li  class = "collection-item"><i>Business Layer</i> : <br/>contains code that would enable business logics, validation on the input from UI layer.</li>
+      <li  class = "collection-item"><i>Data Layer</i> : <br/>contains all functions that helps in saving business entities to data store.</li>
+    </ul>
+
+    
+    <div class="blogheading">Inside a layer:</div> 
+
+    <p>Layers contains a range of software entities from a few lines of code to set of applications. For instance, in new microservices architectural approach;
+    <br/> Generic layering involves separation of screens from logic and logic from data storage. </p>
+
+    It consists of following 3 layers: 
+    
+    <ul class = "collection">
+      <li  class = "collection-item">UI layer mabe have client applications (mobile apps) that facilitate data collection.</li>
+      <li  class = "collection-item">Business layer may contact external government web services (address verification).</li>
+      <li  class = "collection-item">Data layer maybe wrapping a cloud API to store data on cloud.</li>
+    </ul>
+    
+    <div class="blogheading">Interactions between layers:</div>
+
+    <p>Communication is done using finalized contracts between involved layers. These contracts are essentially data structure used to pass information. Mostly, the contracts are formatted into XML or json (simplified XML) or Class objects.Contracts for layer communication is explained in future blogs. Please do care to have a look.</p>
+    
+    <div class="references"><i>References:</i></div> 
+    <ul class="uiRef">
+      <li class="liRef">https://msdn.microsoft.com/en-us/library/ee658109.aspx</li>
+      <li class="liRef">https://en.wikipedia.org/wiki/Multitier_architecture</li>
+      <li class="liRef">http://microservices.io/patterns/microservices.html</li>
+    </ul>
+
+
+</div>

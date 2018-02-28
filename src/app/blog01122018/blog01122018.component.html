@@ -1,0 +1,60 @@
+<div class="card-content teal lighten-1 " style="text-align: center; padding:10px ">
+    <span class="card-title   white-text"> SOAP Services
+  </span>
+</div>
+<div class="card-action">
+    <div class="blogheading">Introduction:
+    </div>
+    <p>SOAP services are web services. WSDL is created for services that are involving SOAP messages.  
+    </p>
+    <div class="blogheading">SOAP message structure:
+    </div>
+    <p>SOAP message contains 4 important parts as follows:</p>
+    	 <ul class = "collection">
+    <li  class = "collection-item">
+      <i>Envelope
+      </i> : 
+      <br/>This is a tag that encloses all of the SOAP message.
+    </li>
+    <li  class = "collection-item">
+      <i>Header
+      </i> : 
+      <br/> it can have some common request level properties that might be useful to process each request coming to that endpoint. E.g:- digital signature, user details to map the data to. <br/>
+      Each header can have 2 attributes:<br/>
+Actor: would be the recipient of the request<br/>
+MustUnderstand: mentions if recipient can ignore the header.<br/>
+    </li>
+       <li  class = "collection-item">
+      <i>Body
+      </i> : 
+      <br/>contains actual data that will transferred in the message. The data is represented as a XML chunk. 
+    </li>
+       <li  class = "collection-item">
+      <i>Fault
+      </i> : 
+      <br/> part of a response and has details of an error occurred in service. Details include error description, error code and its source.
+    </li>
+    <li  class = "collection-item">
+      <i>Fault Codes (4 possibilities):
+      </i> : 
+      <br/>
+SOAP-ENV:VersionMismatch<br/>
+Problem with xml namespace used in request. Contact service team to get rightful namespace.<br/>
+SOAP-ENV:MustUnderstand<br/>
+Required header element is not processed by server correctly.<br/>
+SOAP-ENV:Client<br/>
+Message from client is not correctly formed.<br/>
+SOAP-ENV:Server<br/>
+Server problem and could not be processed.<br/>
+
+    </li>
+  </ul>
+     
+    <div class="blogheading">SOAP in WSDL:
+    </div>
+    <p>In WSDL, endpoint is made SOAP with its binding definition <br/>
+&lt;soap:binding style='document'   transport='http://schemas.xmlsoap.org/soap/http' /&gt;
+</p>
+    
+    
+</div>

@@ -1,0 +1,61 @@
+<div class="card-content teal lighten-1 " style="text-align: center; padding:10px ">
+  <span class="card-title   white-text"> Business Objects
+  </span>
+</div>
+<div class="card-action">
+  <div class="blogheading">Introduction:
+  </div> 
+  <p>Business Objects (BO) are instances of class that is used to represent a datum. It can also be referred to as model in newer systems. It is a basic data contract between different layers and business layer.
+  </p> 
+  <div class="blogheading">Database, class and collection:
+  </div> 
+  <p>
+    Databases consists of tables which contain the following:
+columns (fields) -  represented by properties in a class definition.
+rows (records) - represented by objects/instances of a class.
+Relationship between tables -  can be enforced with inner classes or use of complex types inside a class.
+Set of objects is called collection and it roughly represents set of records. Most programming languages provides a lot of options to represent collections. 
+  </p> 
+  <div class="blogheading">Business entity and Database entity:
+  </div> 
+  <p>As per enterprise architectures, database would be the first component to be designed in new application. These folks knows what are important business entities to be maintained over time. With enhancements to application, deviation between 2 entity definitions becomes greater. This requires additional processing of data (use of BO) before sending to data store.</p>
+  <div class="blogheading">Business entity and UI entity:
+  </div> 
+  <p>Web pages contains tons of forms that are used to capture data from end user. Due to intuitive UI designs, data from a form cannot be directly sent to data store. Converting form data to BO and letting business layer process (validation, rules, etc..) it enriches information inside a data. </p>
+ <div class="blogheading">Benefits:
+  </div> 
+  <ul class = "collection">
+    <li  class = "collection-item">
+      <i>Validation
+      </i> : 
+      <br/>user input acceptance in business layers can be easily achieved with operations defined in a BO class. 
+E.g:- purchase-BO can be checked before order-BO is submitted to store.
+    </li>
+    <li  class = "collection-item">
+      <i>Data Security
+      </i> : 
+      <br/> most of the data saving queries are exposed as functions. In most cases, business layer coder never knows about actual queries being used for DB operations.
+E.g:- data can be sent to cloud using secured  API token over web services. 
+    </li>
+       <li  class = "collection-item">
+      <i>Transaction
+      </i> : 
+      <br/>user inputs through wizards involves building one big DB record from several tiny BO from each wizard step. Wizard can be analogized to a transaction with many steps.
+E.g:-  profile compilation for an user (personal, financial, education details, etc.) 
+    </li>
+       <li  class = "collection-item">
+      <i>Maintain, reuse, integration
+      </i> : 
+      <br/> with respect to coding, BO improves reusability and  singularity of a single business idea. It also facilitates integration with other business entities.
+E.g:- over time, complex user BO is created using personal BO, eductional BO, etc.. 
+    </li>
+  </ul>
+  <div class="references">
+    <i>References:
+    </i>
+  </div> 
+  <ul class="uiRef">
+    <li class="liRef">https://www.tutorialspoint.com/java/java_collections.htm</li>
+ <li class="liRef">https://www.techopedia.com/definition/25982/business-object-bo</li> 
+  </ul>
+</div>
