@@ -9,4 +9,4 @@ https://stackoverflow.com/questions/33749994/dynamic-template-in-templaturl-in-a
  
 
 
-<a href="whatsapp://send?text=HelloWorld&phone=+14438701456">Ping me on WhatsApp</a>
+<a href="whatsapp://send?text=HelloWorld&phone=4438701456">Ping me on WhatsApp</a>
