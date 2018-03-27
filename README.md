@@ -6,7 +6,6 @@
   <tr>
     <td>Office Check-in</td>
     <td><a href="https://api.whatsapp.com/send?phone=+14438701456&text=Came to Office"> Came to office </a></td> 
-    <td>Office Check-out</td>
   </tr>
   <tr>
     <td>Lunch</td>
