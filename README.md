@@ -8,4 +8,5 @@ https://stackoverflow.com/questions/33749994/dynamic-template-in-templaturl-in-a
  https://stackoverflow.com/questions/40529294/how-do-i-use-different-template-urls-for-same-component-in-angular-1-5
  
 
-<a href="whatsapp://send?abid=+14438701456&text=HelloWorld!">Send Message</a>
+
+<a href="whatsapp://send?text=Hello World!&phone=+14438701456">Ping me on WhatsApp</a>
