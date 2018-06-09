@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.pd-0 {
+    padding: 0 !important;
+}
+
+.pl-10 {
+    padding-left: 10 !important;
+}
+
+.pd-t-10 {
+    padding: 10 !important;
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+
+.m-30 {
+    margin: 30px !important;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.mat-expansion-panel-body {
+    padding: 0px !important;
+}

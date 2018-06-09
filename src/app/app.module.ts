@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MaterializeModule } from "angular2-materialize";
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MenuComponent } from './menu/menu.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { Blog1118Component } from './blog1118/blog1118.component';
 import { Blog01012018Component } from './blog01012018/blog01012018.component';
@@ -29,6 +30,7 @@ import { Blog01172018Component } from './blog01172018/blog01172018.component';
   declarations: [
     AppComponent,
     NavbarComponent,
+    MenuComponent,
     MainContentComponent,
     Blog1118Component,
     Blog01012018Component,
@@ -51,7 +53,8 @@ import { Blog01172018Component } from './blog01172018/blog01172018.component';
   ],
   imports: [
     BrowserModule,
-    MaterializeModule,
+    BrowserAnimationsModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

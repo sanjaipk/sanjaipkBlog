@@ -1,63 +1,47 @@
-<div class="card-content teal lighten-1 " style="text-align: center; padding:10px ">
-    <span class="card-title   white-text"> REST Services
-  </span>
-</div>
 <div class="card-action">
     <div class="blogheading">Introduction:
     </div>
-    <p>REST is a way to implement web services. This article explains about the request and response for a REST service. 
+    <p>REST is a way to implement web services. This article explains about the request and response for a REST service.
     </p>
     <div class="blogheading">Concept:
     </div>
     <p>Everything is a resource in REST. URI is used to locate a resource in REST services. </p> URI contains the following:
 
-    	 <ul class = "collection">
-    <li  class = "collection-item">
-      <i>URL
-      </i> : 
-      <br/>it begins with protocol + network host name + document path.
-E.g:- http://example.com/mypage.html
-    </li>
-    <li  class = "collection-item">
-      <i>URN
-      </i> : 
-      <br/> Identifies a resource by a unique and persistent name. However, is not useful in finding a resource.
-E.g:- urn:uuid:6e8bc430-9c3a-11d9-9669-0800200c9a66 
-    </li>
-       <li  class = "collection-item">
-      <i>URC
-      </i> : 
-      <br/>Points to metadata about a document
-E.g:- view-source:http://example.com/ 
-    </li>
-       <li  class = "collection-item">
-      <i>Data URN
-      </i> : 
-      <br/>  data can be placed directly into a URI
-E.g:- data:,Hello%20World
-    </li>
-  </ul>
-     
+    <ul class="collection">
+        <li class="collection-item">
+            <i>URL
+      </i> :
+            <br/>it begins with protocol + network host name + document path. E.g:- http://example.com/mypage.html
+        </li>
+        <li class="collection-item">
+            <i>URN
+      </i> :
+            <br/> Identifies a resource by a unique and persistent name. However, is not useful in finding a resource. E.g:- urn:uuid:6e8bc430-9c3a-11d9-9669-0800200c9a66
+        </li>
+        <li class="collection-item">
+            <i>URC
+      </i> :
+            <br/>Points to metadata about a document E.g:- view-source:http://example.com/
+        </li>
+        <li class="collection-item">
+            <i>Data URN
+      </i> :
+            <br/> data can be placed directly into a URI E.g:- data:,Hello%20World
+        </li>
+    </ul>
+
     <div class="blogheading">REST over HTTP:
     </div>
-    <p>HTTP methods are mapped against REST services. Since REST is lightweight.<br/>
+    <p>HTTP methods are mapped against REST services. Since REST is lightweight.<br/> GET : This would get collection of the resources in a given URI. Response can be in any data type from JSON to binary.<br/> POST : Request will also contain data sent to
+        server. Server will be able to process the Post data. Response can be again in any type from JSON to binary.<br/> PUT : Request to create new item to the collections. New item shall be created with data present in the request.<br/> DELETE: This
+        should be ideally be used to delete the resource pointed by the URI.
 
-GET : This would get collection of the resources in a given URI.
-Response can be in any data type from JSON to binary.<br/>
-
-POST : Request will also contain data sent to server. Server will be able to process the Post data. Response can be again in any type from JSON to binary.<br/>
- 
-PUT : Request to create new item to the collections. New item shall be created with data present in the request.<br/>
-
-DELETE: This should be ideally be used to delete the resource pointed by the URI.
-
-</p>
+    </p>
     <div class="blogheading">Client side:
     </div>
-    <p>There is no need to create a stub/proxy in client application to consume REST services. This is because there is no binding definition involved for these web services. <br/>
+    <p>There is no need to create a stub/proxy in client application to consume REST services. This is because there is no binding definition involved for these web services. <br/> However, there is a need for asynchronous call from client. Call to service
+        might take time to provide a response. During the service call, it is important to not block user interaction on the screen. These scenarios must be handled by UI developers with extra coding. This can be viewed as small overhead.
 
-However, there is a need for asynchronous call from client. Call to service might take time to provide a response. During the service call, it is important to not block user interaction on the screen. These scenarios must be handled by UI developers with extra coding. This can be viewed as small overhead.
+    </p>
 
-</p>
-    
 </div>

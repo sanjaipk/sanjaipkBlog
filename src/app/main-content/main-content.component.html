@@ -1,92 +1,157 @@
-<nav>
+<nav class="hide-on-med-and-down">
     <div class="nav-wrapper green darken-3">
-      <div class="row">
-        <div class="col s12 ">
-    <a href="#!" class="brand-logo" style="padding-left: 10px;"><i class="medium material-icons">language</i>BrainFeaster - {{selectedBlog.title}}</a>
-    
-    <ul class="right hide-on-med-and-down">
-      <li><a href="mailto:sanjai.com@gmail.com"><i class="small material-icons">email</i></a></li> 
-      <li><a href="https://www.linkedin.com/in/sanjai-prabahar/"><i class="small material-icons">perm_contact_calendar</i></a></li>
-      <li><a href="https://github.com/sanjaipk"><i class="small material-icons">code</i></a></li>
-    </ul>
-  </div>
-  </div>
-</div>
-  
-  </nav>
-
-<div class="row">
-  <div class="col s9">
-    <div class="row">
-      <div class="col s12 m12">
-        <div class="card">
-          <div [ngSwitch]="selectedBlog.id">
-            <app-blog01012018 *ngSwitchCase="01012018">...</app-blog01012018>
-            <app-blog01022018 *ngSwitchCase="01022018">...</app-blog01022018>
-            <app-blog01032018 *ngSwitchCase="01032018">...</app-blog01032018>
-            <app-blog01042018 *ngSwitchCase="01042018">...</app-blog01042018>
-            <app-blog01052018 *ngSwitchCase="01052018">...</app-blog01052018>
-            <app-blog01062018 *ngSwitchCase="01062018">...</app-blog01062018>
-            <app-blog01072018 *ngSwitchCase="01072018">...</app-blog01072018>
-
-            <app-blog01082018 *ngSwitchCase="01082018">...</app-blog01082018>
-            <app-blog01092018 *ngSwitchCase="01092018">...</app-blog01092018>
-            <app-blog01102018 *ngSwitchCase="01102018">...</app-blog01102018>
-            <app-blog01122018 *ngSwitchCase="01122018">...</app-blog01122018>
-            <app-blog01132018 *ngSwitchCase="01132018">...</app-blog01132018>
-            <app-blog01142018 *ngSwitchCase="01142018">...</app-blog01142018>
-
-            <app-blog01152018 *ngSwitchCase="01152018">...</app-blog01152018>
-            <app-blog01162018 *ngSwitchCase="01162018">...</app-blog01162018>
-            <app-blog01172018 *ngSwitchCase="01172018">...</app-blog01172018>
-          </div>
+        <div class="row">
+            <div class="col s12 ">
+                <a href="#!" class="brand-logo" style="padding-left: 10px;">
+                    <i class="medium material-icons">language</i>BrainFeaster - {{selectedBlog.title}}</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="mailto:sanjai.com@gmail.com"><i class="small material-icons">email</i></a></li>
+                    <li><a href="https://www.linkedin.com/in/sanjai-prabahar/"><i class="small material-icons">perm_contact_calendar</i></a></li>
+                    <li><a href="https://github.com/sanjaipk"><i class="small material-icons">code</i></a></li>
+                </ul>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</nav>
+<div class="mt-10 hide-on-large-only">
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" [expanded]="panelOpenState">
+            <mat-expansion-panel-header class="green darken-3">
+                <mat-panel-title>
+                    <!-- <span class="brand-logo valign-wrapper">
+                        <i class=" material-icons">language</i>     BrainFeaster - {{selectedBlog.title}}
+                    </span> -->
 
+                    <div class=" green darken-3" style="overflow:hidden">
+                        <div class="row m-0 white-text">
+                            <div class=" col s12 valign-wrapper ">
+                                <i class=" material-icons">language</i>
+                                <span class="ml-10">BrainFeaster - {{selectedBlog.title}}</span>
+                            </div>
+                        </div>
+                    </div>
 
-  <!--side bar -->
-  <div class="col s3">
-    <div class="collection">
-      <div href="#" class="collection-item teal lighten-3  " style="padding: 5px 10px; text-align: right">
-        Recent Posts
-      </div>
-      <div *ngFor="let blog of pagedBlogList; let i = index" href="#" class="collection-item" style="padding-left:8px;padding-right:0px;padding-top:0px;padding-bottom:0px;" [ngClass]="{'teal lighten-5':blog.id === selectedBlog.id}">
-        <div class="row" style="margin: 0px;">
-          <div *ngIf="blog.id != '_nav'; then thenBlock else elseBlock"></div>
-          <ng-template #thenBlock>
-            <div (click)="onSelect(blog, '')">
-              <a href="#" class="row s12 indigo-text darken-4" style="margin: 0px; text-align:right">
+                </mat-panel-title>
+                <!-- <mat-panel-description>
+                    Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <div class="collection">
+                <div *ngFor="let blog of pagedBlogList; let i = index" href="#" class="collection-item" style="padding-left:8px;padding-right:0px;padding-top:0px;padding-bottom:0px;" [ngClass]="{'teal lighten-5':blog.id === selectedBlog.id}">
+                    <div class="row" style="margin: 0px;">
+                        <div *ngIf="blog.id != '_nav'; then thenBlock else elseBlock"></div>
+                        <ng-template #thenBlock>
+                            <div (click)="onSelect(blog, '')">
+                                <a href="#" class="row s12 indigo-text darken-4" style="margin: 0px; text-align:right">
+                        {{blog.title}}
+                      </a>
+                                <div class="row shortdate" style="margin:0px;text-align: left">
+                                    <span style="font-size:6px">{{blog.date}}</span>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template #elseBlock>
+                            <div class="row" style="margin:2px auto;">
+                                <a class="col s5 left " href="#" [ngStyle]="{'visibility':pageIdx > 1 ? 'visibilty' : 'hidden' }" (click)="onNavSelect('-')">
+                                    <span class="left"> 
+                                            <i class="fas fa-chevron-left"></i>
+                                        <i class="fas fa-chevron-left"></i>
+                                        <i class="fas fa-chevron-left"></i>
+                                       </span>
+                                </a>
+                                <!--<span class=" black-text text-darken-2 "   *ngIf="(pageIdx > 1) && (pageIdx <= maxPageIdx)">|</span> -->
+                                <a class="col s6 right" href="#" [ngStyle]="{'visibility':pageIdx <= maxPageIdx ? 'visibilty' : 'hidden' }" (click)="onNavSelect('+')">
+                                    <span class="right">
+                                            <i class="fas fa-chevron-right"></i>
+                                        <i class="fas fa-chevron-right"></i>
+                                        <i class="fas fa-chevron-right"></i>
+                                       </span>
+                                </a>
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+            <span class="text-grey lighten-2 ml-10"><small>
+              *All data and information provided on this site is for informational purposes only. 
+            </small>
+          </span>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+<div class="row">
+    <div class="col s12 l9">
+        <div class="row">
+            <div class="col s12 m12">
+                <div class="card">
+                    <div [ngSwitch]="selectedBlog.id">
+                        <app-blog01012018 *ngSwitchCase="01012018">...</app-blog01012018>
+                        <app-blog01022018 *ngSwitchCase="01022018">...</app-blog01022018>
+                        <app-blog01032018 *ngSwitchCase="01032018">...</app-blog01032018>
+                        <app-blog01042018 *ngSwitchCase="01042018">...</app-blog01042018>
+                        <app-blog01052018 *ngSwitchCase="01052018">...</app-blog01052018>
+                        <app-blog01062018 *ngSwitchCase="01062018">...</app-blog01062018>
+                        <app-blog01072018 *ngSwitchCase="01072018">...</app-blog01072018>
+
+                        <app-blog01082018 *ngSwitchCase="01082018">...</app-blog01082018>
+                        <app-blog01092018 *ngSwitchCase="01092018">...</app-blog01092018>
+                        <app-blog01102018 *ngSwitchCase="01102018">...</app-blog01102018>
+                        <app-blog01122018 *ngSwitchCase="01122018">...</app-blog01122018>
+                        <app-blog01132018 *ngSwitchCase="01132018">...</app-blog01132018>
+                        <app-blog01142018 *ngSwitchCase="01142018">...</app-blog01142018>
+
+                        <app-blog01152018 *ngSwitchCase="01152018">...</app-blog01152018>
+                        <app-blog01162018 *ngSwitchCase="01162018">...</app-blog01162018>
+                        <app-blog01172018 *ngSwitchCase="01172018">...</app-blog01172018>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--side bar -->
+    <div class="col l3 hide-on-med-and-down">
+        <div class="collection">
+            <div href="#" class="collection-item teal lighten-3  " style="padding: 5px 10px; text-align: right">
+                Recent Posts
+            </div>
+            <div *ngFor="let blog of pagedBlogList; let i = index" href="#" class="collection-item" style="padding-left:8px;padding-right:0px;padding-top:0px;padding-bottom:0px;" [ngClass]="{'teal lighten-5':blog.id === selectedBlog.id}">
+                <div class="row" style="margin: 0px;">
+                    <div *ngIf="blog.id != '_nav'; then thenBlock else elseBlock"></div>
+                    <ng-template #thenBlock>
+                        <div (click)="onSelect(blog, '')">
+                            <a href="#" class="row s12 indigo-text darken-4" style="margin: 0px; text-align:right">
                 {{blog.title}}
               </a>
-              <div class="row shortdate" style="margin:0px;text-align: left">
-               <span style="font-size:6px">{{blog.date}}</span>
-              </div>
+                            <div class="row shortdate" style="margin:0px;text-align: left">
+                                <span style="font-size:6px">{{blog.date}}</span>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template #elseBlock>
+                        <div class="row" style="margin:2px auto;">
+                            <a class="col s5 left " href="#" [ngStyle]="{'visibility':pageIdx > 1 ? 'visibilty' : 'hidden' }" (click)="onNavSelect('-')">
+                                <span class="left"> 
+                                    <i class="fas fa-chevron-left"></i>
+                                <i class="fas fa-chevron-left"></i>
+                                <i class="fas fa-chevron-left"></i>
+                               </span>
+                            </a>
+                            <!--<span class=" black-text text-darken-2 "   *ngIf="(pageIdx > 1) && (pageIdx <= maxPageIdx)">|</span> -->
+                            <a class="col s6 right" href="#" [ngStyle]="{'visibility':pageIdx <= maxPageIdx ? 'visibilty' : 'hidden' }" (click)="onNavSelect('+')">
+                                <span class="right">
+                                    <i class="fas fa-chevron-right"></i>
+                                <i class="fas fa-chevron-right"></i>
+                                <i class="fas fa-chevron-right"></i>
+                               </span>
+                            </a>
+                        </div>
+                    </ng-template>
+                </div>
             </div>
-          </ng-template>
-          <ng-template #elseBlock>
-            <div class="row" style="margin:2px auto;">
-              <a class="col s5  " style="margin-right:10px;" href="#" *ngIf="pageIdx > 1" (click)="onNavSelect('-')">
-                  <i class="fas fa-chevron-right"></i>
-                  <i class="fas fa-chevron-right"></i>
-                  <i class="fas fa-chevron-right"></i>
-              </a>
-              <!--<span class=" black-text text-darken-2 "   *ngIf="(pageIdx > 1) && (pageIdx <= maxPageIdx)">|</span> -->
-              <a class="col s5 " style="margin-left:10px;" href="#" *ngIf="pageIdx <= maxPageIdx"
-                (click)="onNavSelect('+')">
-                <i class="fas fa-chevron-left"></i>
-                <i class="fas fa-chevron-left"></i>
-                <i class="fas fa-chevron-left"></i>
-              </a>
-            </div>
-          </ng-template>
         </div>
-      </div>
-    </div>
-    <span class="text-grey lighten-2"><small>
+        <span class="text-grey lighten-2"><small>
       *All data and information provided on this site is for informational purposes only. 
     </small>
   </span>
-  </div>
+    </div>
 </div>
