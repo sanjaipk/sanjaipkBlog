@@ -47,7 +47,7 @@ jobs:
           personal_token: ${{ secrets.API_TOKEN_GITHUB }}
           src_path: ./
           src_branch: proBuid
-          dst_path: ./
+          dst_path: ./blog/
           dst_owner: brainfeaster
           dst_repo_name: brainfeaster.github.io
           username: sanjaipk
